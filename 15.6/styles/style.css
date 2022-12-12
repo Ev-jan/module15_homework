@@ -1,0 +1,149 @@
+body {
+    height: 100vh;
+    margin: 10vh;
+    display: flex;
+    justify-content: center;
+    font-size: 2vmin;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;
+    background: #315efb;
+    transition: 0.3s;
+    width: 20vmin;
+    height: 6vmin;
+}
+
+.btn:hover {
+    background-color: #6f8aec;
+}
+
+.chat-form {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 0.09fr 0.2fr auto auto;
+    height: 70vmin;
+    width: 90vmin;
+    gap: 1vmin;
+    border: 1vmin solid #315efb;
+    padding: 2vmin;
+}
+
+label {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    font-size: 1.5em;
+}
+
+textarea {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    height: 6vmin;
+    box-sizing: border-box;
+    font-family: inherit;
+    border: .1vmin solid #315efb;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: #6e8dfe;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+textarea[type=text] {
+    color: #315efb;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+.btn-send {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.btn-geoloc {
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+
+.chat-display {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    max-width: 100%;
+    padding: 1vmin;
+    border: .1vmin solid #315efb;
+    overflow-x:hidden; 
+    overflow-y:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message:nth-of-type(odd) {
+    align-self: flex-start;
+    background-color:  #315efb;
+    color: white;
+}
+
+.message:nth-of-type(even) {
+    align-self: flex-end;
+    background-color:  white;
+    color:  #315efb;
+    border:  .1vmin solid #315efb;
+    box-sizing: border-box;
+    
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    padding: 1vmin;
+    margin: 1vmin;
+    border-radius: 3px;
+    min-width: 50%;
+    max-width: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    textarea {
+        grid-row: 2/3;
+        grid-column: 1/-1;    
+    }
+
+    .chat-display {
+        grid-row: 4/5;
+        grid-column: 1/-1;
+    }
+
+    .btn-send {
+        grid-row: 3/4;
+        grid-column: 1/2;
+        width: 100%;
+    }
+    
+    .btn-geoloc {
+        grid-row: 3/4;
+        grid-column: 2/3;
+        width: 100%;
+    }
+
+    .chat-form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
