@@ -1,8 +1,8 @@
 const btnSend = document.querySelector('.btn-send');
 const btnGeoloc = document.querySelector('.btn-geoloc');
 const wsUri = 'wss://echo-ws-service.herokuapp.com/';
-let chatDisplay = document.querySelector('.chat-display');
-let inputNode = document.getElementById('input');
+const chatDisplay = document.querySelector('.chat-display');
+const inputNode = document.getElementById('input');
 let userText;
 let websocket;
 
@@ -11,7 +11,7 @@ inputNode.addEventListener('input', () => {
 })
 
 function validateForm()    {
-    if (inputNode.value.length === 0) { 
+    if (inputNode.value.length === 0 || inputNode.value === ' ') { 
         alert("Your message must be filled");  	
         return false; 
      }  	
