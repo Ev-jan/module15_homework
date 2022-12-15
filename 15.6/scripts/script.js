@@ -11,7 +11,7 @@ inputNode.addEventListener('input', () => {
 })
 
 function validateForm()    {
-    if (inputNode.value.length === 0 || inputNode.value === ' ') { 
+    if (inputNode.value.length === 0 || inputNode.value.trim() === '') { 
         alert("Your message must be filled");  	
         return false; 
      }  	
